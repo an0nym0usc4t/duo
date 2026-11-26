@@ -14,26 +14,26 @@
   <div class="page-wrapper">
     <main class="postcard-container">
       
-      
+      <!-- TOP FROSTED CARD -->
       <div class="glass-card top-card">
         <header class="cover-header">
           <h1 class="main-title">nexus astronomicus</h1>
           <p class="subtitle">brought together by: Rhianne Beatrice Adrias and Daniela Louise Cruz</p>
         </header>
 
-        
+        <!-- NAVIGATION TABS -->
         <nav class="tab-nav">
           <button class="tab-btn active" onclick="openTab(event, 'stars', 1)">Stars</button>
           <button class="tab-btn" onclick="openTab(event, 'interests', 2)">Interests</button>
           <button class="tab-btn" onclick="openTab(event, 'hobbies', 1)">Hobbies</button>
         </nav>
 
-        
+        <!-- ================= TAB 1: STARS ================= -->
         <section id="stars" class="tab-content active">
           <!-- Yelah Row (Photo Left, Bio Right) -->
           <div class="bio-row">
             <div class="polaroid-stack left">
-              <img src="images/yelah.jpg" alt="Yelah">
+              <img src="yelah.jpg" alt="Yelah">
             </div>
             <div class="bio-text">
               <h2 class="cursive-name">Yelah</h2>
@@ -56,7 +56,7 @@
               </p>
             </div>
             <div class="polaroid-stack right">
-              <img src="images/rhiya.jfif" alt="Bea">
+              <img src="bea.jpg" alt="Bea">
             </div>
           </div>
         </section>
@@ -64,25 +64,25 @@
         <!-- ================= TAB 2: INTERESTS ================= -->
         <section id="interests" class="tab-content">
           <div class="two-col-grid">
-            <!-- Left Column (Bea's Music & Shows) -->
+            <!-- Left Column (Bea's Music, Shows & Discreet Extras) -->
             <div class="col left-col">
               <div class="media-list">
                 <div class="media-item">
-                  <img src="images/song-una.jpg" alt="Una">
+                  <img src="song-una.jpg" alt="Una">
                   <div class="media-info">
                     <span class="song-title">Una</span>
                     <span class="artist-name">the vowels they orbit</span>
                   </div>
                 </div>
                 <div class="media-item">
-                  <img src="images/song-talk.jpg" alt="Talk">
+                  <img src="song-talk.jpg" alt="Talk">
                   <div class="media-info">
                     <span class="song-title">Talk</span>
                     <span class="artist-name">beabadoobee</span>
                   </div>
                 </div>
                 <div class="media-item">
-                  <img src="images/song-volkno.jpg" alt="VolKNo">
+                  <img src="song-volkno.jpg" alt="VolKNo">
                   <div class="media-info">
                     <span class="song-title">VolKNo</span>
                     <span class="artist-name">TREASURE</span>
@@ -94,17 +94,24 @@
 
               <div class="poster-row">
                 <div class="poster-card">
-                  <img src="images/show-bea-1.jpg" alt="Favorite 1">
+                  <img src="show-bea-1.jpg" alt="Favorite 1">
                   <span>1</span>
                 </div>
                 <div class="poster-card">
-                  <img src="images/show-bea-2.jpg" alt="Favorite 2">
+                  <img src="show-bea-2.jpg" alt="Favorite 2">
                   <span>2</span>
                 </div>
                 <div class="poster-card">
-                  <img src="images/show-bea-3.jpg" alt="Favorite 3">
+                  <img src="show-bea-3.jpg" alt="Favorite 3">
                   <span>3</span>
                 </div>
+              </div>
+
+              <!-- Discreet mini-collage for rhiyapsy, rhiyapsy2, and rhiyagaraa -->
+              <div class="discreet-strip">
+                <img src="rhiyapsy.jfif" alt="Psych 1" title="Psych">
+                <img src="rhiyagaraa.jfif" alt="Garaa" title="Garaa">
+                <img src="rhiyapsy2.jfif" alt="Psych 2" title="Psych">
               </div>
             </div>
 
@@ -112,21 +119,21 @@
             <div class="col right-col">
               <div class="media-list">
                 <div class="media-item">
-                  <img src="images/song-movies.jpg" alt="Like The Movies">
+                  <img src="song-movies.jpg" alt="Like The Movies">
                   <div class="media-info">
                     <span class="song-title">Like The Movies</span>
                     <span class="artist-name">Laufey</span>
                   </div>
                 </div>
                 <div class="media-item">
-                  <img src="images/song-frank.jpg" alt="It Had To Be You">
+                  <img src="song-frank.jpg" alt="It Had To Be You">
                   <div class="media-info">
                     <span class="song-title">It Had To Be You</span>
                     <span class="artist-name">Frank Sinatra</span>
                   </div>
                 </div>
                 <div class="media-item">
-                  <img src="images/song-queen.jpg" alt="Somebody To Love">
+                  <img src="song-queen.jpg" alt="Somebody To Love">
                   <div class="media-info">
                     <span class="song-title">Somebody To Love</span>
                     <span class="artist-name">QUEEN</span>
@@ -138,15 +145,15 @@
 
               <div class="poster-row">
                 <div class="poster-card">
-                  <img src="images/show-yelah-1.jpg" alt="Hannibal">
+                  <img src="show-yelah-1.jpg" alt="Hannibal">
                   <span>1</span>
                 </div>
                 <div class="poster-card">
-                  <img src="images/show-yelah-2.jpg" alt="Favorite 2">
+                  <img src="show-yelah-2.jpg" alt="Favorite 2">
                   <span>2</span>
                 </div>
                 <div class="poster-card">
-                  <img src="images/show-yelah-3.jpg" alt="Favorite 3">
+                  <img src="show-yelah-3.jpg" alt="Favorite 3">
                   <span>3</span>
                 </div>
               </div>
@@ -157,13 +164,19 @@
         <!-- ================= TAB 3: HOBBIES ================= -->
         <section id="hobbies" class="tab-content">
           <div class="two-col-grid">
-            <!-- Left Column (Bea's Hobbies Collage) -->
+            <!-- Left Column (Bea's Hobbies: Reading, Baking x3, Graphic Design x2) -->
             <div class="col left-col">
               <div class="col-symbol">Ψ</div>
               <div class="hobby-collage left-collage">
-                <img src="images/hobby-books.jpg" class="collage-img img-1" alt="Reading">
-                <img src="images/hobby-baking.jpg" class="collage-img img-2" alt="Confectionery">
-                <img src="images/hobby-design.jpg" class="collage-img img-3" alt="Graphic Design">
+                <!-- Reading -->
+                <img src="rhiya.jfif" class="collage-img img-read" alt="Reading">
+                <!-- Baking / Confectionery -->
+                <img src="rhiyabake.jfif" class="collage-img img-bake1" alt="Baking 1">
+                <img src="rhiyabake2.jfif" class="collage-img img-bake2" alt="Baking 2">
+                <img src="rhiyabake3.jfif" class="collage-img img-bake3" alt="Baking 3">
+                <!-- Graphic Design -->
+                <img src="rhiyades.jfif" class="collage-img img-des1" alt="Graphic Design 1">
+                <img src="rhiyades2.jfif" class="collage-img img-des2" alt="Graphic Design 2">
               </div>
             </div>
 
@@ -171,9 +184,9 @@
             <div class="col right-col">
               <div class="col-symbol">✎</div>
               <div class="hobby-collage right-collage">
-                <img src="images/hobby-arch.jpg" class="collage-img img-1" alt="Architecture">
-                <img src="images/hobby-music.jpg" class="collage-img img-2" alt="Sheet Music">
-                <img src="images/hobby-writing.jpg" class="collage-img img-3" alt="Writing">
+                <img src="hobby-arch.jpg" class="collage-img img-1" alt="Architecture">
+                <img src="hobby-music.jpg" class="collage-img img-2" alt="Sheet Music">
+                <img src="hobby-writing.jpg" class="collage-img img-3" alt="Writing">
               </div>
             </div>
           </div>
