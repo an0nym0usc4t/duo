@@ -1,4 +1,4 @@
-    <script>
+
     // Local image filenames saved in the same folder as html.html:
     var bgLink1 = "bg1.jpg";
     var bgLink2 = "bg2.jpg";
@@ -27,4 +27,4 @@
         document.body.style.backgroundImage = "url('" + bgLink2 + "')";
       }
     }
-  </script>
+
