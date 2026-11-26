@@ -3,166 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Postcard Website</title>
+  <title>nexus astronomicus</title>
+  <!-- Google Fonts matching your cursive script, clean sans-serif, and monospace typewriter text -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Alex+Brush&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
-<link rel="stylesheet" href="style.css">
-
-<body>
+<body class="bg-1">
 
   <div class="page-wrapper">
-    
-    <!-- MAIN POSTCARD CONTAINER -->
     <main class="postcard-container">
       
-      <!-- Cover / Header Design -->
-      <header class="cover-header">
-        <h1 class="main-title">nexus astronomicus</h1>
-        <p class="subtitle">Made By: BeLa</p>
-      </header>
+      <!-- TOP FROSTED CARD -->
+      <div class="glass-card top-card">
+        <header class="cover-header">
+          <h1 class="main-title">nexus astronomicus</h1>
+          <p class="subtitle">brought together by: Rhianne Beatrice Adrias and Daniela Louise Cruz</p>
+        </header>
 
-      <!-- Navigation Tabs -->
-      <nav class="tab-nav">
-        <button class="tab-btn active" onclick="openTab(event, 'tab1', 1)">About Us</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab2', 2)">Interests</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab3', 1)">Hobbies</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab4', 2)">Creds & Links</button>
-      </nav>
+        <!-- NAVIGATION TABS (Active tab enlarges just like your mockup) -->
+        <nav class="tab-nav">
+          <button class="tab-btn active" onclick="openTab(event, 'stars', 1)">Stars</button>
+          <button class="tab-btn" onclick="openTab(event, 'interests', 2)">Interests</button>
+          <button class="tab-btn" onclick="openTab(event, 'hobbies', 1)">Hobbies</button>
+        </nav>
 
-      <!-- 1ST TAB: ABOUT US (Uses Background 1) -->
-      <section id="tab1" class="tab-content active">
-        <div class="section-header">
-          <h2>About Us!</h2>
+        <!-- ================= TAB 1: STARS ================= -->
+        <section id="stars" class="tab-content active">
+          <!-- Yelah Row (Photo Left, Bio Right) -->
+          <div class="bio-row">
+            <div class="polaroid-stack left">
+              <img src="images/yelah.jpg" alt="Yelah">
+            </div>
+            <div class="bio-text">
+              <h2 class="cursive-name">Yelah</h2>
+              <p>
+                An eccentric architect with a love of art<br>
+                diverse interests are to collect<br>
+                driven by wonder, right from the start
+              </p>
+            </div>
+          </div>
+
+          <hr class="horizontal-divider">
+
+          <!-- Bea Row (Bio Left, Photo Right) -->
+          <div class="bio-row">
+            <div class="bio-text">
+              <h2 class="cursive-name">Bea</h2>
+              <p>
+                a psychiatric enthusiast lassie who ignites her passion for graphic design and confectionery.
+              </p>
+            </div>
+            <div class="polaroid-stack right">
+              <img src="images/bea.jpg" alt="Bea">
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= TAB 2: INTERESTS ================= -->
+        <section id="interests" class="tab-content">
+          <div class="two-col-grid">
+            <!-- Left Column (Bea's Music & Shows) -->
+            <div class="col left-col">
+              <div class="media-list">
+                <div class="media-item">
+                  <img src="images/song-una.jpg" alt="Una">
+                  <div class="media-info">
+                    <span class="song-title">Una</span>
+                    <span class="artist-name">the vowels they orbit</span>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="images/song-talk.jpg" alt="Talk">
+                  <div class="media-info">
+                    <span class="song-title">Talk</span>
+                    <span class="artist-name">beabadoobee</span>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="images/song-volkno.jpg" alt="VolKNo">
+                  <div class="media-info">
+                    <span class="song-title">VolKNo</span>
+                    <span class="artist-name">TREASURE</span>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="horizontal-divider">
+
+              <div class="poster-row">
+                <div class="poster-card">
+                  <img src="images/show-bea-1.jpg" alt="Favorite 1">
+                  <span>1</span>
+                </div>
+                <div class="poster-card">
+                  <img src="images/show-bea-2.jpg" alt="Favorite 2">
+                  <span>2</span>
+                </div>
+                <div class="poster-card">
+                  <img src="images/show-bea-3.jpg" alt="Favorite 3">
+                  <span>3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column (Yelah's Music & Shows) -->
+            <div class="col right-col">
+              <div class="media-list">
+                <div class="media-item">
+                  <img src="images/song-movies.jpg" alt="Like The Movies">
+                  <div class="media-info">
+                    <span class="song-title">Like The Movies</span>
+                    <span class="artist-name">Laufey</span>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="images/song-frank.jpg" alt="It Had To Be You">
+                  <div class="media-info">
+                    <span class="song-title">It Had To Be You</span>
+                    <span class="artist-name">Frank Sinatra</span>
+                  </div>
+                </div>
+                <div class="media-item">
+                  <img src="images/song-queen.jpg" alt="Somebody To Love">
+                  <div class="media-info">
+                    <span class="song-title">Somebody To Love</span>
+                    <span class="artist-name">QUEEN</span>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="horizontal-divider">
+
+              <div class="poster-row">
+                <div class="poster-card">
+                  <img src="images/show-yelah-1.jpg" alt="Hannibal">
+                  <span>1</span>
+                </div>
+                <div class="poster-card">
+                  <img src="images/show-yelah-2.jpg" alt="Favorite 2">
+                  <span>2</span>
+                </div>
+                <div class="poster-card">
+                  <img src="images/show-yelah-3.jpg" alt="Favorite 3">
+                  <span>3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= TAB 3: HOBBIES ================= -->
+        <section id="hobbies" class="tab-content">
+          <div class="two-col-grid">
+            <!-- Left Column (Bea's Hobbies Collage) -->
+            <div class="col left-col">
+              <div class="col-symbol">Ψ</div>
+              <div class="hobby-collage left-collage">
+                <img src="images/hobby-books.jpg" class="collage-img img-1" alt="Reading">
+                <img src="images/hobby-baking.jpg" class="collage-img img-2" alt="Confectionery">
+                <img src="images/hobby-design.jpg" class="collage-img img-3" alt="Graphic Design">
+              </div>
+            </div>
+
+            <!-- Right Column (Yelah's Hobbies Collage) -->
+            <div class="col right-col">
+              <div class="col-symbol">✎</div>
+              <div class="hobby-collage right-collage">
+                <img src="images/hobby-arch.jpg" class="collage-img img-1" alt="Architecture">
+                <img src="images/hobby-music.jpg" class="collage-img img-2" alt="Sheet Music">
+                <img src="images/hobby-writing.jpg" class="collage-img img-3" alt="Writing">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- BOTTOM FROSTED SOCIALS CARD -->
+      <footer class="glass-card socials-card">
+        <div class="socials-grid">
+          <!-- Bea's Socials (Left) -->
+          <div class="social-col">
+            <a href="https://instagram.com" target="_blank" class="social-link">
+              <span class="icon">IG</span> @rhiayofsunshine
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="social-link">
+              <span class="icon">TT</span> @mitochondrhiya
+            </a>
+            <a href="https://x.com" target="_blank" class="social-link">
+              <span class="icon">𝕏</span> @sunnesrhine
+            </a>
+          </div>
+
+          <!-- Yelah's Socials (Right) -->
+          <div class="social-col">
+            <a href="https://instagram.com" target="_blank" class="social-link">
+              <span class="icon">IG</span> @yelah.crz
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="social-link">
+              <span class="icon">TT</span> @xst.rxm
+            </a>
+            <a href="https://x.com" target="_blank" class="social-link">
+              <span class="icon">𝕏</span> @4nonymous_c4t
+            </a>
+          </div>
         </div>
-
-        <div class="scroll-area">
-          <div class="postcard-div">
-            <div class="img-box left">Img 1</div>
-            <div class="text-box">
-              <h3>Person 1 / Intro</h3>
-              <p>Write a short bio or introduction here. This box scrolls if you add lots of content!</p>
-            </div>
-          </div>
-
-          <div class="postcard-div">
-            <div class="text-box">
-              <h3>Person 2 / More Info</h3>
-              <p>Add more details here. Notice how the image flips to the right side just like your sketch.</p>
-            </div>
-            <div class="img-box right">Img 2</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2ND TAB: INTERESTS (Uses Background 2) -->
-      <section id="tab2" class="tab-content">
-        <div class="section-header">
-          <h2>Interests</h2>
-        </div>
-
-        <div class="scroll-area">
-          <div class="postcard-div">
-            <div class="text-box">
-              <h3>Music</h3>
-              <p>Favorite artists, bands, albums, or current songs on repeat.</p>
-            </div>
-          </div>
-
-          <div class="postcard-div">
-            <div class="text-box">
-              <h3>Pop Culture</h3>
-              <p>Favorite movies, TV shows, fashion, or trends you love.</p>
-            </div>
-          </div>
-
-          <div class="postcard-div">
-            <div class="text-box">
-              <h3>Fandoms</h3>
-              <p>Games, books, anime, or communities you are part of.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3RD TAB: HOBBIES (Uses Background 1) -->
-      <section id="tab3" class="tab-content">
-        <div class="section-header">
-          <h2>Hobbies (w/ Proof)</h2>
-        </div>
-
-        <div class="scroll-area">
-          <div class="postcard-div">
-            <div class="img-box left">Proof Img</div>
-            <div class="text-box">
-              <h3>Hobby #1</h3>
-              <p>Describe your hobby and show a picture of your work or collection on the left.</p>
-            </div>
-          </div>
-
-          <div class="postcard-div">
-            <div class="text-box">
-              <h3>Hobby #2</h3>
-              <p>Add another hobby and attach a photo proof on the right.</p>
-            </div>
-            <div class="img-box right">Proof Img</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4TH TAB: CREDS / FAVE SITES / FORMS (Uses Background 2) -->
-      <section id="tab4" class="tab-content">
-        <div class="section-header">
-          <h2>Creds & Fave Sites</h2>
-        </div>
-
-        <div class="scroll-area">
-          <div class="postcard-div">
-            <div class="text-box">
-              <h3>Credits & Inspiration</h3>
-              <p>Layout inspired by vintage postcards. Fonts and graphics credited here.</p>
-            </div>
-          </div>
-
-          <div class="postcard-div">
-            <div class="text-box">
-              <h3>Favorite Sites</h3>
-              <ul>
-                <li><a href="#">Cool Website 1</a></li>
-                <li><a href="#">Cool Website 2</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="postcard-div">
-            <div class="text-box">
-              <h3>Leave a Message</h3>
-              <form class="mini-form">
-                <input type="text" placeholder="Your name..." required>
-                <textarea rows="2" placeholder="Say hi!"></textarea>
-                <button type="submit">Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      </footer>
 
     </main>
-
-    <!-- SIDE SOCIALS BOX -->
-    <aside class="socials-box">
-      <h3>Socials</h3>
-      <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">TikTok</a></li>
-        <li><a href="#">Twitter / X</a></li>
-        <li><a href="#">Spotify</a></li>
-      </ul>
-    </aside>
-
   </div>
 
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
