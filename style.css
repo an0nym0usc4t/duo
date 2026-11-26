@@ -21,13 +21,13 @@ body {
 /* Background 1 (Stars & Hobbies) */
 body.bg-1 {
   background-color: #7d674a;
-  background-image: url('bg1.jpg');
+  background-image: url('brown.jpg');
 }
 
 /* Background 2 (Interests) */
 body.bg-2 {
   background-color: #5c3a21;
-  background-image: url('bg2.jpg');
+  background-image: url('beige.jpg');
 }
 
 .page-wrapper {
