@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postcard Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, monospace;
+}
+
+body {
+  /* Fallback color before images are pasted */
+  background-color: #d8cfc0;
+  
+  /* Full-screen background settings & smooth transition */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Wrapper to align Postcard and Socials box side-by-side */
+.page-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Main Postcard Box (slightly translucent so background peeks nicely) */
+.postcard-container {
+  background-color: rgba(253, 251, 247, 0.94);
+  border: 3px solid #2c2c2c;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 550px;
+  padding: 20px;
+  box-shadow: 2px 2px 0px #2c2c2c;
+  backdrop-filter: blur(4px);
+}
+
+/* Cover / Header Design */
+.cover-header {
+  background-color: #f0e6d2;
+  border: 2px dashed #2c2c2c;
+  padding: 18px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.main-title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Tabs Navigation */
+.tab-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px 4px;
+  background-color: #fff;
+  border: 2px solid #2c2c2c;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.tab-btn:hover {
+  background-color: #f0e6d2;
+}
+
+.tab-btn.active {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  border: 2px solid #2c2c2c;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.section-header {
+  border-bottom: 2px solid #2c2c2c;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+/* Scrollable Container inside the Postcard */
+.scroll-area {
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: #2c2c2c;
+}
+
+/* Individual Postcard Divs */
+.postcard-div {
+  border: 2px solid #2c2c2c;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #faf8f5;
+}
+
+.img-box {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #2c2c2c;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.text-box {
+  flex: 1;
+  font-size: 0.85rem;
+}
+
+.text-box h3 {
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.text-box ul {
+  margin-left: 18px;
+}
+
+/* Mini Form in 4th Tab */
+.mini-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.mini-form input,
+.mini-form textarea {
+  border: 1px solid #2c2c2c;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+
+.mini-form button {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+}
+
+/* Socials Box on the Bottom Right */
+.socials-box {
+  background-color: rgba(253, 251, 247, 0.94);
+  border: 3px solid #2c2c2c;
+  padding: 15px;
+  width: 160px;
+  box-shadow: 1px 1px 0px #2c2c2c;
+  backdrop-filter: blur(4px);
+}
+
+.socials-box h3 {
+  border-bottom: 2px solid #2c2c2c;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.socials-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.socials-box a {
+  text-decoration: none;
+  color: #2c2c2c;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.socials-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 720px) {
+  .page-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .socials-box {
+    width: 100%;
+    max-width: 550px;
+  }
+}
+
+    
+</style>
+
+
+
+<body>
+
+  <div class="page-wrapper">
+    
+    <!-- MAIN POSTCARD CONTAINER -->
+    <main class="postcard-container">
+      
+      <!-- Cover / Header Design -->
+      <header class="cover-header">
+        <h1 class="main-title">TITLE</h1>
+        <p class="subtitle">Made By: Us</p>
+      </header>
+
+      <!-- Navigation Tabs -->
+      <nav class="tab-nav">
+        <button class="tab-btn active" onclick="openTab(event, 'tab1', 1)">About Us</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2', 2)">Interests</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3', 1)">Hobbies</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab4', 2)">Creds & Links</button>
+      </nav>
+
+      <!-- 1ST TAB: ABOUT US (Uses Background 1) -->
+      <section id="tab1" class="tab-content active">
+        <div class="section-header">
+          <h2>About Us!</h2>
+        </div>
+
+        <div class="scroll-area">
+          <div class="postcard-div">
+            <div class="img-box left">Img 1</div>
+            <div class="text-box">
+              <h3>Person 1 / Intro</h3>
+              <p>Write a short bio or introduction here. This box scrolls if you add lots of content!</p>
+            </div>
+          </div>
+
+          <div class="postcard-div">
+            <div class="text-box">
+              <h3>Person 2 / More Info</h3>
+              <p>Add more details here. Notice how the image flips to the right side just like your sketch.</p>
+            </div>
+            <div class="img-box right">Img 2</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2ND TAB: INTERESTS (Uses Background 2) -->
+      <section id="tab2" class="tab-content">
+        <div class="section-header">
+          <h2>Interests</h2>
+        </div>
+
+        <div class="scroll-area">
+          <div class="postcard-div">
+            <div class="text-box">
+              <h3>Music</h3>
+              <p>Favorite artists, bands, albums, or current songs on repeat.</p>
+            </div>
+          </div>
+
+          <div class="postcard-div">
+            <div class="text-box">
+              <h3>Pop Culture</h3>
+              <p>Favorite movies, TV shows, fashion, or trends you love.</p>
+            </div>
+          </div>
+
+          <div class="postcard-div">
+            <div class="text-box">
+              <h3>Fandoms</h3>
+              <p>Games, books, anime, or communities you are part of.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3RD TAB: HOBBIES (Uses Background 1) -->
+      <section id="tab3" class="tab-content">
+        <div class="section-header">
+          <h2>Hobbies (w/ Proof)</h2>
+        </div>
+
+        <div class="scroll-area">
+          <div class="postcard-div">
+            <div class="img-box left">Proof Img</div>
+            <div class="text-box">
+              <h3>Hobby #1</h3>
+              <p>Describe your hobby and show a picture of your work or collection on the left.</p>
+            </div>
+          </div>
+
+          <div class="postcard-div">
+            <div class="text-box">
+              <h3>Hobby #2</h3>
+              <p>Add another hobby and attach a photo proof on the right.</p>
+            </div>
+            <div class="img-box right">Proof Img</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4TH TAB: CREDS / FAVE SITES / FORMS (Uses Background 2) -->
+      <section id="tab4" class="tab-content">
+        <div class="section-header">
+          <h2>Creds & Fave Sites</h2>
+        </div>
+
+        <div class="scroll-area">
+          <div class="postcard-div">
+            <div class="text-box">
+              <h3>Credits & Inspiration</h3>
+              <p>Layout inspired by vintage postcards. Fonts and graphics credited here.</p>
+            </div>
+          </div>
+
+          <div class="postcard-div">
+            <div class="text-box">
+              <h3>Favorite Sites</h3>
+              <ul>
+                <li><a href="#">Cool Website 1</a></li>
+                <li><a href="#">Cool Website 2</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="postcard-div">
+            <div class="text-box">
+              <h3>Leave a Message</h3>
+              <form class="mini-form">
+                <input type="text" placeholder="Your name..." required>
+                <textarea rows="2" placeholder="Say hi!"></textarea>
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SIDE SOCIALS BOX -->
+    <aside class="socials-box">
+      <h3>Socials</h3>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">Twitter / X</a></li>
+        <li><a href="#">Spotify</a></li>
+      </ul>
+    </aside>
+
+  </div>
+
+    <script>
+    // Local image filenames saved in the same folder as html.html:
+    var bgLink1 = "bg1.jpg";
+    var bgLink2 = "bg2.jpg";
+
+    // Set initial background on page load (1st tab)
+    document.body.style.backgroundImage = "url('" + bgLink1 + "')";
+
+    function openTab(evt, tabName, bgChoice) {
+      var contents = document.querySelectorAll('.tab-content');
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].classList.remove('active');
+      }
+
+      var buttons = document.querySelectorAll('.tab-btn');
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove('active');
+      }
+
+      document.getElementById(tabName).classList.add('active');
+      evt.currentTarget.classList.add('active');
+
+      // Keep the word "url" here — only edit bgLink1 and bgLink2 at the top!
+      if (bgChoice === 1) {
+        document.body.style.backgroundImage = "url('" + bgLink1 + "')";
+      } else {
+        document.body.style.backgroundImage = "url('" + bgLink2 + "')";
+      }
+    }
+  </script>
+
+
+
+</body>
+</html>
